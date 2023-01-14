@@ -64,7 +64,18 @@ end
 -- vector{0.123400, 2.000000}      3.0
 -- vector{0.123400}        2.0
 -- vector{}        0.12340000271797
+```
 
+## C++/Lua Interop
+```c++
+int Test(lua_State *L) {
+    LuaVector *v = LuaVector::CheckArg(L, 1);
+    v->push_back(1);
+    return 0;
+}
+```
+
+```c
 test(a)
 print(a)
 -- vector{1.000000}
